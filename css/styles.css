@@ -256,10 +256,47 @@ a {
   margin-bottom: 1.75rem;
 }
 
+/* Home: blurb left, book + parchment stack right */
+.hero-grid--home {
+  grid-template-columns: 1fr minmax(200px, 280px);
+}
+
+.hero-col--book-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  justify-self: end;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+.hero-col--book-stack .parchment,
+.hero-col--book-stack .musings {
+  width: 100%;
+  align-self: stretch;
+}
+
+.cover-link {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+}
+
 @media (max-width: 720px) {
   .hero-grid {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .hero-grid--home {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-col--book-stack {
+    justify-self: center;
+    max-width: 100%;
   }
 
   .hero-grid .hero-col--text {
@@ -272,7 +309,7 @@ a {
 }
 
 .cover {
-  max-width: 180px;
+  max-width: 220px;
   width: 100%;
   height: auto;
   border-radius: 2px;
@@ -281,26 +318,41 @@ a {
     -2px 0 8px rgba(0, 0, 0, 0.15);
   transform: perspective(400px) rotateY(-6deg) rotateX(2deg);
   display: block;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto;
 }
 
 .buy-curve {
   font-family: "Kalam", cursive;
   font-size: 1.1rem;
   color: var(--link-blue);
-  margin: 0.25rem 0 0;
+  margin: 0;
   transform: rotate(-2deg);
+}
+
+.buy-curve a {
+  text-decoration: none;
+}
+
+.buy-curve a:hover,
+.buy-curve a:focus-visible {
+  text-decoration: underline;
 }
 
 /* Parchment quote */
 .parchment {
-  background: linear-gradient(145deg, #faf3e3 0%, var(--parchment) 45%, #e8dcc4 100%);
+  --parchment-fiber: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.12'/%3E%3C/svg%3E");
+  background-color: #e6d6b8;
+  background-image: var(--parchment-fiber),
+    linear-gradient(165deg, rgba(255, 250, 240, 0.55) 0%, transparent 42%),
+    linear-gradient(145deg, #faf3e3 0%, var(--parchment) 42%, #d4c4a0 100%);
+  background-blend-mode: multiply, soft-light, normal;
   padding: 1rem 1.1rem;
-  border: 1px solid #c9b896;
+  border: 1px solid #b8a06e;
   border-radius: 3px;
   box-shadow:
     3px 4px 12px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 8px rgba(90, 70, 40, 0.08);
   position: relative;
 }
 
