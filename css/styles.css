@@ -37,24 +37,53 @@ body {
   color: var(--text);
   line-height: 1.55;
   background-color: #8a8580;
-  background-image: url("../assets/david.jpg");
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
 }
 
 /* Fallback if bg image missing */
 body.no-bg-image {
-  background-image: none;
   background: linear-gradient(160deg, #9a9590 0%, #6b6660 50%, #4a4540 100%);
+}
+
+body.no-bg-image .layout-bg {
+  display: none;
 }
 
 body.no-bg-image::after {
   display: none;
 }
 
-/* Optional light veil so the white content card still reads over the statue; no blur */
+/* Two-pane David: left half of photo | right half of photo (figure centered at viewport center) */
+.layout-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+  pointer-events: none;
+}
+
+.layout-bg__half {
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 100vh;
+  background-image: url("../assets/david.jpg");
+  background-repeat: no-repeat;
+  background-color: #6a655e;
+}
+
+.layout-bg__half--left {
+  background-size: 200% 100%;
+  background-position: left center;
+}
+
+.layout-bg__half--right {
+  background-size: 200% 100%;
+  background-position: right center;
+}
+
+/* Optional light veil over the full viewport */
 body::after {
   content: "";
   position: fixed;
@@ -65,6 +94,8 @@ body::after {
 }
 
 .page-wrap {
+  position: relative;
+  z-index: 0;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.25rem 1.25rem 2rem;
