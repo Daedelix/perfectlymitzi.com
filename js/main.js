@@ -40,6 +40,9 @@
     /* file:// on Windows may include drive; normalize to filename */
     if (page.indexOf("\\") !== -1) page = page.split("\\").pop() || page;
 
+    /* Article pages under Press Room */
+    if (page === "interview-mitzi-penzes.html") page = "press.html";
+
     document.querySelectorAll(".main-nav a[data-nav]").forEach(function (a) {
       var target = a.getAttribute("data-nav");
       if (target === page) {

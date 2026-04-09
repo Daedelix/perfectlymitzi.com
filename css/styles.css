@@ -387,6 +387,39 @@ a {
   margin-bottom: 0.25rem;
 }
 
+/* Standalone article (e.g. interview) */
+.article-back {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.article-subtitle {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  color: var(--footer-gray);
+  margin: -0.35rem 0 1.25rem;
+}
+
+.article-interview .section-title {
+  margin-top: 1.5rem;
+}
+
+.article-interview .section-title:first-of-type {
+  margin-top: 0;
+}
+
+.article-question {
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--heading-blue);
+  margin: 1.35rem 0 0.5rem;
+}
+
+.article-interview .article-question:first-of-type {
+  margin-top: 0.75rem;
+}
+
 /* Bottom band (about / contact) */
 .bottom-band {
   border: 1px solid #d0d0d0;
