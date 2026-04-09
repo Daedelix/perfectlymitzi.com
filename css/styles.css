@@ -50,34 +50,24 @@ body.no-bg-image {
   background: linear-gradient(160deg, #9a9590 0%, #6b6660 50%, #4a4540 100%);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: inherit;
-  background-size: cover;
-  background-position: center top;
-  filter: blur(12px);
-  transform: scale(1.08);
-  z-index: -2;
-}
-
-body.no-bg-image::before {
+body.no-bg-image::after {
   display: none;
 }
 
+/* Optional light veil so the white content card still reads over the statue; no blur */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   z-index: -1;
+  pointer-events: none;
 }
 
 .page-wrap {
-  max-width: 920px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1.25rem 1rem 2rem;
+  padding: 1.25rem 1.25rem 2rem;
 }
 
 /* Header */
