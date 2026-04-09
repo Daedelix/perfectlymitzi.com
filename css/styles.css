@@ -279,9 +279,16 @@ a {
 }
 
 .cover-link {
-  display: block;
+  display: inline-block;
   line-height: 0;
+  max-width: 100%;
   text-decoration: none;
+}
+
+.cover-link:focus-visible {
+  outline: 2px solid var(--link-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 @media (max-width: 720px) {
@@ -315,23 +322,6 @@ a {
   border-radius: 2px;
   display: block;
   margin: 0 auto;
-}
-
-.buy-curve {
-  font-family: "Kalam", cursive;
-  font-size: 1.1rem;
-  color: var(--link-blue);
-  margin: 0;
-  transform: rotate(-2deg);
-}
-
-.buy-curve a {
-  text-decoration: none;
-}
-
-.buy-curve a:hover,
-.buy-curve a:focus-visible {
-  text-decoration: underline;
 }
 
 /* Pergamine: aged paper quote box */
