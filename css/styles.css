@@ -271,9 +271,10 @@ a {
   margin-bottom: 1.75rem;
 }
 
-/* Home: blurb left, book + parchment stack right */
+/* Home: blurb left, larger featured book right */
 .hero-grid--home {
-  grid-template-columns: 1fr minmax(200px, 280px);
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+  gap: 1.25rem 2rem;
 }
 
 .hero-col--book-stack {
@@ -284,7 +285,7 @@ a {
   justify-self: end;
   text-align: center;
   width: 100%;
-  max-width: 280px;
+  max-width: 380px;
 }
 
 .hero-col--book-stack .parchment,
@@ -339,6 +340,16 @@ a {
   margin: 0 auto;
 }
 
+.cover--home {
+  max-width: 320px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.home-pergamine {
+  margin-top: 0.55rem;
+  max-width: 620px;
+}
+
 /* Pergamine: aged paper quote box (texture image) */
 .parchment,
 .pergamine {
@@ -381,25 +392,6 @@ a {
   font-size: 0.95em;
   position: relative;
   z-index: 1;
-}
-
-.musings {
-  margin-top: 1.1rem;
-}
-
-.musings h3 {
-  font-size: 1rem;
-  font-family: Georgia, serif;
-  margin: 0 0 0.4rem;
-}
-
-.musings ul {
-  margin: 0;
-  padding-left: 1.1rem;
-}
-
-.musings li {
-  margin-bottom: 0.25rem;
 }
 
 /* Standalone article (e.g. interview) */

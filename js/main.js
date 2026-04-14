@@ -42,7 +42,6 @@
 
     /* Article pages under Press Room */
     if (page === "interview-mitzi-penzes.html") page = "press.html";
-    if (page === "musing-aging-time.html") page = "index.html";
 
     document.querySelectorAll(".main-nav a[data-nav]").forEach(function (a) {
       var target = a.getAttribute("data-nav");
