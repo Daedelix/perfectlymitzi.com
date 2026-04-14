@@ -52,35 +52,24 @@ body.no-bg-image::after {
   display: none;
 }
 
-/* Two-pane David: left half of photo | right half of photo (figure centered at viewport center) */
+/* Single full background image (no duplication) */
 .layout-bg {
   position: fixed;
   inset: 0;
   z-index: -2;
-  display: flex;
-  flex-direction: row;
+  display: block;
   width: 100%;
   min-height: 100vh;
   pointer-events: none;
-}
-
-.layout-bg__half {
-  flex: 1 1 50%;
-  min-width: 0;
-  min-height: 100vh;
   background-image: url("../assets/bg.png");
   background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
   background-color: #6a655e;
 }
 
-.layout-bg__half--left {
-  background-size: cover;
-  background-position: left center;
-}
-
-.layout-bg__half--right {
-  background-size: cover;
-  background-position: right center;
+.layout-bg__half {
+  display: none;
 }
 
 /* Optional light veil over the full viewport */
