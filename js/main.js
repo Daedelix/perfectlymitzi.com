@@ -58,7 +58,7 @@
     img.onerror = function () {
       document.body.classList.add("no-bg-image");
     };
-    img.src = "assets/david.jpg";
+    img.src = "assets/bg.png";
   }
 
   function initFeatureCarousels() {

@@ -68,7 +68,7 @@ body.no-bg-image::after {
   flex: 1 1 50%;
   min-width: 0;
   min-height: 100vh;
-  background-image: url("../assets/david.jpg");
+  background-image: url("../assets/bg.png");
   background-repeat: no-repeat;
   background-color: #6a655e;
 }
