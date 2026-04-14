@@ -162,7 +162,7 @@ body::after {
 
 /* Main white card */
 .main-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--container-border);
   border-radius: 8px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
@@ -433,6 +433,85 @@ a {
 
 .article-interview .article-question:first-of-type {
   margin-top: 0.75rem;
+}
+
+.musing-date {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  padding: 0.2rem 0 0.6rem;
+  margin-bottom: 0.35rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.musing-date__month {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.2rem;
+  color: var(--heading-blue);
+}
+
+.musing-date__day {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #444;
+}
+
+.musing-date__year {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin-bottom: 0.15rem;
+}
+
+/* Inline blog photos */
+.article-photo {
+  margin: 0.35rem 0 1rem;
+}
+
+.article-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #c8c8c8;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.article-photo--left,
+.article-photo--right {
+  width: min(44%, 320px);
+}
+
+.article-photo--left {
+  float: left;
+  margin: 0.35rem 1rem 0.75rem 0;
+}
+
+.article-photo--right {
+  float: right;
+  margin: 0.35rem 0 0.75rem 1rem;
+}
+
+.article-photo--center {
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-photo--clear {
+  clear: both;
+}
+
+@media (max-width: 760px) {
+  .article-photo--left,
+  .article-photo--right {
+    float: none;
+    width: 100%;
+    max-width: 460px;
+    margin: 0.5rem auto 0.85rem;
+  }
 }
 
 /* Bottom band (about / contact) */
