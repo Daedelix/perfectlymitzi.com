@@ -79,8 +79,8 @@ body::after {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.12) 18%,
+    rgba(255, 255, 255, 0.24) 0%,
+    rgba(255, 255, 255, 0.14) 18%,
     rgba(255, 255, 255, 0) 42%
   );
   z-index: -1;
@@ -162,7 +162,7 @@ body::after {
 
 /* Main white card */
 .main-card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid var(--container-border);
   border-radius: 8px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
